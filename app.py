@@ -92,15 +92,11 @@ def chatbot(user_message, history=None):
 
     return response_generator()
 
+# 🧠 Launch Gradio app
 with gr.Blocks(theme="Respair/Shiki@1.2.1") as demo:
     gr.Markdown("# Mental Health Support Chatbot")
 
-    gr.Markdown("## Listen to a Calming Song")
-    gr.Audio(
-        value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        label="Calming Background Music",
-        autoplay=False,
-    )
+    # Removed audio component
 
     chat_history = gr.State([])
     chat_display = gr.Chatbot(label="Chat History", type="messages")
